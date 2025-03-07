@@ -21,7 +21,7 @@ const HowItWorks: React.FC = () => {
           <Step 
             number={1} 
             title="Choose a Celebrity" 
-            description="Simply tell our AI who to 'call'." 
+            description="Simply tell our AI who to 'call'. Our platform offers a wide range of celebrities, musicians, actors, and public figures to choose from. No complicated setup required." 
             icon={<Users className="h-6 w-6 text-neon-cyan" />} 
             delay={0.1}
           />
