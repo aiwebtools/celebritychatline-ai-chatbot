@@ -39,14 +39,14 @@ const CelebrityImage: React.FC = () => {
       >
         <img 
           src="https://img1.wsimg.com/isteam/ip/9fd6d942-5b46-4025-92e2-0f1ec2a7adf2/a-split-screen-image-of-snoop-dogg-talking-on-.png/:/cr=t:0%25,l:0.11%25,w:99.78%25,h:100%25/rs=w:1200,cg:true" 
-          alt="Celebrity Chatline GPT in action - Snoop Dogg example" 
+          alt="Celebrity Chatline GPT in action - Snoop Dogg text chat example" 
           className="w-full h-auto object-cover rounded-2xl shadow-xl"
           loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60"></div>
         <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
           <p className="text-white text-sm sm:text-base md:text-lg font-medium text-shadow">
-            Experience lifelike conversations with your favorite celebrities
+            Experience lifelike text conversations with your favorite celebrities
           </p>
         </div>
       </a>

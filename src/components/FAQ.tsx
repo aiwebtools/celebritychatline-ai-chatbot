@@ -4,6 +4,10 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const faqs = [
   {
+    question: "Is this an actual phone line to celebrities?",
+    answer: "No, Celebrity Chatline GPT is entirely text-based. It's a sophisticated AI chat interface powered by ChatGPT that simulates text conversations with celebrities based on their public personas. There are no actual phone calls or voice interactions - all communication happens through text chat."
+  },
+  {
     question: "How accurate are the celebrity impersonations?",
     answer: "Our AI technology has been trained to accurately mimic the speech patterns, knowledge base, and personality traits of various celebrities. While it's an AI simulation and not the actual person, users consistently report that the experience feels remarkably authentic and true to the celebrity's public persona."
   },
@@ -13,7 +17,7 @@ const faqs = [
   },
   {
     question: "Is this connected to the real celebrities?",
-    answer: "No, Celebrity Chatline GPT uses advanced AI to create simulated conversations based on public information about celebrities. These are not connections to the actual individuals but rather AI-generated responses designed to mimic their communication style and knowledge."
+    answer: "No, Celebrity Chatline GPT uses advanced AI to create simulated text conversations based on public information about celebrities. These are not connections to the actual individuals but rather AI-generated responses designed to mimic their communication style and knowledge."
   },
   {
     question: "Can I request any celebrity?",
@@ -39,7 +43,7 @@ const FAQ: React.FC = () => {
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-heading">Frequently Asked Questions</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Everything you need to know about the Celebrity Chatline GPT experience.
+            Everything you need to know about the Celebrity Chatline GPT text chat experience.
           </p>
         </div>
         

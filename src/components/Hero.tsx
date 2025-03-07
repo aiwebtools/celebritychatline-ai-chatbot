@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Phone, Star, Zap, MessageSquare } from 'lucide-react';
+import { MessageSquare, Star, Zap, MessageCircle } from 'lucide-react';
 import Logo from './Logo';
 
 const Hero: React.FC = () => {
@@ -41,17 +41,17 @@ const Hero: React.FC = () => {
           <div className="mb-4 flex justify-center">
             <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-muted text-neon-cyan">
               <Star className="h-3.5 w-3.5 mr-1 text-neon-cyan" />
-              Premium Celebrity AI Experience
+              AI-Powered Text Chat Experience
             </span>
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 gradient-heading">
-            Talk To Your Favorite Celebrities
+            Text Chat With Your Favorite Celebrities
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-            Lifelike conversations with AI-powered celebrity personalities. 
-            Experience authentic interactions that mimic their unique style, knowledge, and character.
+            Experience lifelike text conversations with AI-powered celebrity personalities. 
+            Our ChatGPT-based interface mimics their unique style, knowledge, and character through text chat.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
               href="https://chatgpt.com/g/g-pCTnTEwn4-celebrity-chatline-gpt" 
               className="bg-gradient-to-r from-neon-cyan to-neon-magenta text-black font-medium px-8 py-3 rounded-full text-lg shadow-lg shadow-neon-cyan/20 hover:shadow-neon-cyan/30 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2"
             >
-              <Phone className="h-5 w-5" /> 
+              <MessageSquare className="h-5 w-5" /> 
               Start Chatting Now
             </a>
             <a 
@@ -72,7 +72,7 @@ const Hero: React.FC = () => {
           </div>
           
           <div className="mt-12 flex flex-wrap justify-center gap-3">
-            <FeatureBadge icon={<MessageSquare className="h-4 w-4" />} text="Authentic Conversations" />
+            <FeatureBadge icon={<MessageSquare className="h-4 w-4" />} text="Text-Based Conversations" />
             <FeatureBadge icon={<Zap className="h-4 w-4" />} text="Unlimited Characters" />
             <FeatureBadge icon={<Star className="h-4 w-4" />} text="Personalized Responses" />
           </div>
