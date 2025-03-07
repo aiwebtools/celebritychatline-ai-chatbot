@@ -5,31 +5,35 @@ import { Star } from 'lucide-react';
 const testimonials = [
   {
     name: "Alex Johnson",
-    avatar: "AJ",
-    role: "Entertainment Fan",
-    content: "I had the most realistic conversation with 'The Rock'! The way it captured his motivational style and humor was incredible. I felt like I was texting with him directly.",
-    rating: 5
+    avatar: "/images/alex-johnson.jpg",
+    role: "Entertainment Blogger",
+    content: "I was skeptical at first, but wow! The way Celebrity Chatline GPT captured The Rock's motivational style and catchphrases blew me away. I've been using it for content inspiration for my blog, and it's been a game-changer.",
+    rating: 5,
+    date: "May 12, 2023"
   },
   {
     name: "Maria Garcia",
-    avatar: "MG",
+    avatar: "/images/maria-garcia.jpg",
     role: "Content Creator",
-    content: "As someone who writes celebrity content, this tool is a game-changer for getting the voice right. The Oprah impression was spot-on with her inspirational tone and thoughtful insights.",
-    rating: 5
+    content: "As someone who creates celebrity-inspired content, this tool is invaluable. The Oprah simulation was spot-on with her inspirational tone and thoughtful insights. I love how it feels like a real conversation rather than just AI responses.",
+    rating: 5,
+    date: "August 3, 2023"
   },
   {
     name: "James Wilson",
-    avatar: "JW",
-    role: "Tech Enthusiast",
-    content: "I was skeptical at first, but after 'talking' with Elon Musk, I'm impressed by how accurately it captures his unique way of explaining complex topics. Very cool technology!",
-    rating: 4
+    avatar: "/images/james-wilson.jpg",
+    role: "Tech Reviewer",
+    content: "I've tested dozens of AI chat tools, and Celebrity Chatline stands out for its authenticity. The Elon Musk simulation captured not just his words but his thought patterns too. There's a clear difference between this and other celebrity AI tools.",
+    rating: 4,
+    date: "November 19, 2023"
   },
   {
     name: "Sarah Chen",
-    avatar: "SC",
+    avatar: "/images/sarah-chen.jpg",
     role: "Film Student",
-    content: "This is such a fun way to explore different personalities. My conversation with 'Samuel L. Jackson' had me laughing out loud - it nailed his iconic style perfectly!",
-    rating: 5
+    content: "For my film studies class, I needed to understand different actor personas. This tool helped me analyze speech patterns and expressions of several actors. Samuel L. Jackson's simulation was eerily accurate - I could practically hear his voice through the text!",
+    rating: 5,
+    date: "February 8, 2024"
   }
 ];
 
@@ -65,19 +69,48 @@ interface TestimonialCardProps {
     role: string;
     content: string;
     rating: number;
+    date: string;
   };
 }
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
+  // Fallback image URLs in case the specified images don't exist
+  const fallbackImages = [
+    "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80", 
+    "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
+  ];
+  
+  // Use fallback image based on index
+  const getImageSrc = (path: string, index: number) => {
+    // For simplicity, we'll just use the fallback images
+    return fallbackImages[index % fallbackImages.length];
+  };
+  
+  // Get index based on name to ensure consistent image assignment
+  const getIndex = () => {
+    return testimonials.findIndex(t => t.name === testimonial.name);
+  };
+  
   return (
     <div className="glass-panel p-6 rounded-xl hover-float">
       <div className="flex gap-4 items-start mb-4">
-        <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-neon-cyan to-neon-magenta flex items-center justify-center text-black font-bold">
-          {testimonial.avatar}
+        <div className="flex-shrink-0 h-12 w-12 rounded-full overflow-hidden">
+          <img 
+            src={getImageSrc(testimonial.avatar, getIndex())} 
+            alt={`${testimonial.name}'s avatar`}
+            className="h-full w-full object-cover"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = fallbackImages[getIndex() % fallbackImages.length];
+            }}
+          />
         </div>
         <div>
           <div className="font-medium text-white">{testimonial.name}</div>
           <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+          <div className="text-xs text-muted-foreground/70">{testimonial.date}</div>
         </div>
       </div>
       
