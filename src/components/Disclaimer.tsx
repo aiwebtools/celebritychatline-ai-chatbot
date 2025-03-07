@@ -4,20 +4,24 @@ import { AlertTriangle } from 'lucide-react';
 
 const Disclaimer: React.FC = () => {
   return (
-    <section id="disclaimer" className="py-16 md:py-20 relative overflow-hidden">
+    <section id="disclaimer" className="py-12 sm:py-16 md:py-20 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-neon-magenta/5 to-transparent"></div>
       
       <div className="section-container">
-        <div className="max-w-4xl mx-auto glass-panel p-6 md:p-8 rounded-xl border border-white/10">
+        <div className="max-w-4xl mx-auto glass-panel p-4 sm:p-6 md:p-8 rounded-xl border border-white/10">
           <div className="flex items-center gap-3 mb-4">
-            <AlertTriangle className="h-6 w-6 text-neon-yellow" />
-            <h2 className="text-2xl md:text-3xl font-bold text-white">Legal Disclaimer</h2>
+            <AlertTriangle className="h-5 w-5 sm:h-6 sm:w-6 text-neon-yellow" />
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">Legal Disclaimer</h2>
           </div>
           
-          <div className="space-y-4 text-muted-foreground">
+          <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-muted-foreground">
+            <p className="text-neon-cyan font-medium">
+              SIMULATION NOTICE: Celebrity Chatline GPT is an AI SIMULATION powered by GPT-4o technology. All conversations are artificially generated and are NOT authentic interactions with real celebrities.
+            </p>
+            
             <p>
-              Celebrity Chatline GPT is an AI entertainment service that uses advanced language models to simulate conversations with celebrity personalities. These simulations are based on public information and are not affiliated with, endorsed by, or connected to the actual individuals being portrayed.
+              Celebrity Chatline GPT is an AI entertainment service that uses advanced language models to simulate text conversations with celebrity personalities. These simulations are based on public information and are not affiliated with, endorsed by, or connected to the actual individuals being portrayed.
             </p>
             
             <p>

@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden" ref={heroRef} style={{ opacity: 0 }}>
+    <div className="relative pt-20 sm:pt-24 md:pt-32 pb-16 sm:pb-20 md:pb-28 overflow-hidden" ref={heroRef} style={{ opacity: 0 }}>
       {/* Background effects */}
       <div className="absolute top-0 left-0 right-0 h-2/3 bg-gradient-to-b from-neon-cyan/5 to-transparent"></div>
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-neon-magenta/10 rounded-full filter blur-3xl"></div>
@@ -45,13 +45,17 @@ const Hero: React.FC = () => {
             </span>
           </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 gradient-heading">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 gradient-heading">
             Text Chat With Your Favorite Celebrities
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8">
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-6 sm:mb-8">
             Experience lifelike text conversations with AI-powered celebrity personalities. 
             Our ChatGPT-based interface mimics their unique style, knowledge, and character through text chat.
+          </p>
+          
+          <p className="text-sm sm:text-base text-neon-cyan mb-6 sm:mb-8 font-medium">
+            Powered by GPT-4o Technology • 100% AI Simulation • Not Real Celebrity Conversations
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -71,10 +75,10 @@ const Hero: React.FC = () => {
             </a>
           </div>
           
-          <div className="mt-12 flex flex-wrap justify-center gap-3">
+          <div className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-3">
             <FeatureBadge icon={<MessageSquare className="h-4 w-4" />} text="Text-Based Conversations" />
-            <FeatureBadge icon={<Zap className="h-4 w-4" />} text="Unlimited Characters" />
-            <FeatureBadge icon={<Star className="h-4 w-4" />} text="Personalized Responses" />
+            <FeatureBadge icon={<Zap className="h-4 w-4" />} text="AI Simulation" />
+            <FeatureBadge icon={<Star className="h-4 w-4" />} text="GPT-4o Powered" />
           </div>
         </div>
       </div>

@@ -54,7 +54,7 @@
   }
   
   html, body {
-    @apply bg-dark text-foreground antialiased scroll-smooth;
+    @apply bg-dark text-foreground antialiased scroll-smooth overflow-x-hidden;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -91,7 +91,7 @@
   }
   
   .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20;
   }
   
   .gradient-heading {
@@ -115,6 +115,16 @@
   
   .hover-float {
     @apply transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-container {
+    @apply py-8 px-4;
+  }
+  
+  h1, h2, h3 {
+    @apply tracking-tight;
   }
 }
 

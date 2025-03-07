@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 
 const CelebrityImage: React.FC = () => {
-  const imageRef = useRef<HTMLImageElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,7 +28,7 @@ const CelebrityImage: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative mx-auto max-w-3xl opacity-0" ref={imageRef}>
+    <div className="relative px-4 sm:px-6 mx-auto max-w-3xl opacity-0" ref={imageRef}>
       {/* Cyberpunk style glow effects */}
       <div className="absolute -inset-1 bg-gradient-to-r from-neon-cyan via-neon-magenta to-neon-blue opacity-30 blur-xl rounded-2xl"></div>
       <div className="absolute -inset-3 bg-gradient-to-r from-neon-cyan via-neon-magenta to-neon-blue opacity-10 blur-2xl rounded-2xl animate-pulse-glow"></div>
@@ -46,7 +46,10 @@ const CelebrityImage: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60"></div>
         <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
           <p className="text-white text-sm sm:text-base md:text-lg font-medium text-shadow">
-            Experience lifelike text conversations with your favorite celebrities
+            Experience lifelike AI-simulated text conversations with your favorite celebrities
+          </p>
+          <p className="text-neon-cyan text-xs sm:text-sm mt-1 text-shadow font-medium">
+            100% AI simulation • Not real celebrities
           </p>
         </div>
       </a>
