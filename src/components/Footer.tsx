@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Phone, Mail, ExternalLink } from 'lucide-react';
 import Logo from './Logo';
@@ -11,22 +10,25 @@ const Footer: React.FC = () => {
           <div className="space-y-4">
             <Logo withTagline />
             <p className="text-muted-foreground">
-              Experience lifelike conversations with AI-powered celebrity personalities that accurately mimic speech patterns, knowledge, and character traits.
+              Top-rated free AI tools for celebrity chat. Experience lifelike conversations with AI-powered celebrity personalities using our advanced AI web tools that accurately mimic speech patterns, knowledge, and character traits.
             </p>
+            <div className="text-xs text-muted-foreground">
+              <strong>Keywords:</strong> ai tools, free ai tools, ai web tools, celebrity chat ai, chatgpt, gpt-4o, artificial intelligence
+            </div>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">Free AI Tools</h3>
             <ul className="space-y-3">
-              <FooterLink href="https://chatgpt.com/g/g-pCTnTEwn4-celebrity-chatline-gpt">Celebrity Chatline GPT</FooterLink>
-              <FooterLink href="#faq">FAQ</FooterLink>
-              <FooterLink href="#disclaimer">Disclaimer</FooterLink>
-              <FooterLink href="https://www.aiwebtools.ai">More AI Tools</FooterLink>
+              <FooterLink href="https://chatgpt.com/g/g-pCTnTEwn4-celebrity-chatline-gpt">Celebrity Chat AI Tool</FooterLink>
+              <FooterLink href="#faq">AI Tools FAQ</FooterLink>
+              <FooterLink href="#disclaimer">AI Tools Disclaimer</FooterLink>
+              <FooterLink href="https://www.aiwebtools.ai">More Free AI Web Tools</FooterLink>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Legal</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">AI Web Tools Legal</h3>
             <ul className="space-y-3">
               <FooterLink href="https://openai.com/policies/privacy-policy/">Privacy Policy</FooterLink>
               <FooterLink href="https://aiwebtools.ai/terms-of-services">Terms of Service</FooterLink>
@@ -34,7 +36,7 @@ const Footer: React.FC = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Contact Us</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">Contact AI Web Tools</h3>
             <ul className="space-y-3">
               <li>
                 <a href="tel:+14758008096" className="text-muted-foreground flex items-center hover:text-neon-cyan transition-colors">
@@ -54,14 +56,15 @@ const Footer: React.FC = () => {
         
         <div className="flex flex-col md:flex-row justify-between items-center pt-6 border-t border-white/10">
           <p className="text-sm text-muted-foreground">
-            © 2025 <a href="https://www.aiwebtools.ai" className="hover:text-neon-cyan transition-colors">AI WEB TOOLS LLC</a> All rights reserved.
+            © 2025 <a href="https://www.aiwebtools.ai" className="hover:text-neon-cyan transition-colors" title="AI Web Tools - Free AI Tools Platform">AI WEB TOOLS LLC</a> - Leading provider of free AI tools and AI web tools. All rights reserved.
           </p>
           
           <a 
             href="https://www.aiwebtools.ai" 
             className="mt-4 md:mt-0 flex items-center gap-2 bg-gradient-to-r from-neon-cyan to-neon-magenta text-black font-medium px-4 py-2 rounded-full text-sm hover:opacity-90 transition-opacity"
+            title="Explore more free AI tools and AI web tools"
           >
-            More AI Tools
+            More Free AI Web Tools
             <ExternalLink className="h-4 w-4" />
           </a>
         </div>

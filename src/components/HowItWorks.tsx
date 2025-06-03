@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Users, MessageSquare, MessageCircle, Sparkles } from 'lucide-react';
 
@@ -11,9 +10,9 @@ const HowItWorks: React.FC = () => {
       
       <div className="section-container">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-heading">How It Works</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-heading">How Our Free AI Tools Work</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Connect with your favorite celebrities through our advanced AI chat technology in just a few simple steps.
+            Connect with your favorite celebrities through our advanced free AI chat technology and AI web tools in just a few simple steps.
           </p>
         </div>
         
@@ -21,28 +20,28 @@ const HowItWorks: React.FC = () => {
           <Step 
             number={1} 
             title="Choose a Celebrity" 
-            description="Simply tell our AI who to 'call'. Our platform offers a wide range of celebrities, musicians, actors, and public figures to choose from. No complicated setup required." 
+            description="Simply tell our AI who to 'call'. Our free AI tools platform offers a wide range of celebrities, musicians, actors, and public figures to choose from. No complicated setup required - just start using our AI web tools instantly." 
             icon={<Users className="h-6 w-6 text-neon-cyan" />} 
             delay={0.1}
           />
           <Step 
             number={2} 
-            title="Start the Chat" 
-            description="Our system connects you to a lifelike AI text interface powered by advanced language technology." 
+            title="Start the AI Chat" 
+            description="Our free AI tools system connects you to a lifelike AI text interface powered by advanced GPT-4o language technology from our AI web tools suite." 
             icon={<MessageSquare className="h-6 w-6 text-neon-magenta" />} 
             delay={0.2}
           />
           <Step 
             number={3} 
-            title="Engage in Conversation" 
-            description="Text back and forth just like you would in a real conversation with responses that match their style." 
+            title="Engage with AI" 
+            description="Text back and forth using our free AI tools just like you would in a real conversation with responses that match their style through our AI web tools technology." 
             icon={<MessageCircle className="h-6 w-6 text-neon-yellow" />} 
             delay={0.3}
           />
           <Step 
             number={4} 
-            title="Experience the Magic" 
-            description="Enjoy a personalized text-based interaction with uncanny resemblance to the real personality." 
+            title="Experience AI Magic" 
+            description="Enjoy a personalized text-based interaction with uncanny resemblance to the real personality using our top-rated free AI tools and AI web tools platform." 
             icon={<Sparkles className="h-6 w-6 text-neon-blue" />} 
             delay={0.4}
           />
