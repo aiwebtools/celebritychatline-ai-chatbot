@@ -32,7 +32,7 @@ const Logo: React.FC<LogoProps> = ({ size = 'md', withTagline = false }) => {
       
       {withTagline && (
         <div className="text-xs text-muted-foreground mt-1">
-          Presented by <a href="https://www.aiwebtools.ai" className="hover:text-neon-cyan transition-colors">AiWebTools.Ai</a>
+          Presented by <a href="https://aiwebtools.lovable.app/?via=aiwebtools" className="hover:text-neon-cyan transition-colors">AiWebTools.Ai</a>
         </div>
       )}
     </div>
