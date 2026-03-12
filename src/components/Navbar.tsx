@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Menu, X } from 'lucide-react';
 import Logo from './Logo';
 
@@ -12,8 +12,22 @@ const Navbar: React.FC = () => {
       setIsScrolled(window.scrollY > 10);
     };
     
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isMobileMenuOpen]);
+
+  const closeMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen(false);
   }, []);
 
   return (
@@ -29,13 +43,13 @@ const Navbar: React.FC = () => {
           <Logo size="md" />
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
             <NavLinks />
           </nav>
           
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-white focus:outline-none"
+            className="md:hidden text-white focus:outline-none active:scale-90 transition-transform duration-150 p-2 -mr-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           >
@@ -45,13 +59,17 @@ const Navbar: React.FC = () => {
       </div>
       
       {/* Mobile Navigation */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-[57px] bg-dark-lighter/95 backdrop-blur-lg z-40 border-t border-white/10 shadow-lg">
-          <nav className="flex flex-col space-y-6 p-6 pt-8">
-            <NavLinks mobile onClick={() => setIsMobileMenuOpen(false)} />
-          </nav>
-        </div>
-      )}
+      <div 
+        className={`md:hidden fixed inset-0 top-[57px] bg-dark-lighter/95 backdrop-blur-lg z-40 border-t border-white/10 shadow-lg transition-all duration-300 ease-in-out ${
+          isMobileMenuOpen 
+            ? 'opacity-100 translate-y-0 pointer-events-auto' 
+            : 'opacity-0 -translate-y-4 pointer-events-none'
+        }`}
+      >
+        <nav className="flex flex-col space-y-5 p-6 pt-8 overflow-y-auto max-h-[calc(100vh-57px)]">
+          <NavLinks mobile onClick={closeMobileMenu} />
+        </nav>
+      </div>
     </header>
   );
 };
@@ -61,11 +79,13 @@ interface NavLinksProps {
   onClick?: () => void;
 }
 
+const AI_TOOLS_URL = 'https://aiwebtools.lovable.app/?via=aiwebtools';
+
 const NavLinks: React.FC<NavLinksProps> = ({ mobile, onClick }) => {
   const baseClasses = "transition-colors duration-300";
   const linkClasses = mobile
-    ? `${baseClasses} text-lg py-2 block w-full text-center`
-    : `${baseClasses} hover:text-neon-cyan`;
+    ? `${baseClasses} text-lg py-3 block w-full text-center active:scale-95 transition-all`
+    : `${baseClasses} hover:text-neon-cyan whitespace-nowrap`;
     
   return (
     <>
@@ -91,7 +111,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ mobile, onClick }) => {
         Disclaimer
       </a>
       <a 
-        href="https://www.aiwebtools.ai" 
+        href={AI_TOOLS_URL}
         className={linkClasses}
         onClick={onClick}
       >
@@ -99,7 +119,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ mobile, onClick }) => {
       </a>
       <a 
         href="https://chatgpt.com/g/g-pCTnTEwn4-celebrity-chatline-gpt" 
-        className={`${mobile ? 'bg-gradient-to-r from-neon-cyan to-neon-magenta text-black font-medium py-3 px-6 rounded-full text-center block w-full mt-4' : 'bg-gradient-to-r from-neon-cyan to-neon-magenta hover:opacity-90 transition-opacity text-black font-medium py-2 px-5 rounded-full'}`}
+        className={`${mobile ? 'bg-gradient-to-r from-neon-cyan to-neon-magenta text-black font-medium py-3 px-6 rounded-full text-center block w-full mt-4 active:scale-95 transition-transform' : 'bg-gradient-to-r from-neon-cyan to-neon-magenta hover:opacity-90 transition-opacity text-black font-medium py-2 px-5 rounded-full whitespace-nowrap'}`}
         onClick={onClick}
       >
         Try Now
